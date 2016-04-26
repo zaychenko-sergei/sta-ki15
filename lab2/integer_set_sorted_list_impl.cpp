@@ -184,7 +184,11 @@ void IntegerSetIntersect ( const IntegerSet & _set1,
     while ( pNode1 && pNode2 )
     {
         if ( pNode1->m_value == pNode2->m_value )
+		{
             IntegerListPushBack( _targetSet.m_data, pNode1->m_value );
+			pNode1 = pNode1->m_pNext;
+			pNode2 = pNode2->m_pNext;
+		}
 
         else if ( pNode1->m_value < pNode2->m_value )
             pNode1 = pNode1->m_pNext;
@@ -202,7 +206,7 @@ void IntegerSetDifference ( const IntegerSet & _set1,
     IntegerSetClear( _targetSet );
 
     IntegerList::Node * pNode1 = _set1.m_data.m_pFirst;
-    IntegerList::Node * pNode2 = _set1.m_data.m_pFirst;
+    IntegerList::Node * pNode2 = _set2.m_data.m_pFirst;
     while ( pNode1 )
     {
         if ( pNode2 )
