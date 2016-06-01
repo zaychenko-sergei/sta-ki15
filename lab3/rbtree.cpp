@@ -35,6 +35,7 @@ void RBTreeDestroy ( RBTree::Node * _pNode )
 void RBTreeDestroy ( RBTree * _pTree )
 {
     RBTreeDestroy( _pTree->m_pRoot );
+	delete _pTree;
 }
 
 

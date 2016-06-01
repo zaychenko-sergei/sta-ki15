@@ -35,6 +35,7 @@ void BSTreeDestroy ( BSTree::Node * _pNode )
 void BSTreeDestroy ( BSTree * _pTree )
 {
     BSTreeDestroy( _pTree->m_pRoot );
+	delete _pTree;
 }
 
 
